@@ -51,7 +51,7 @@ s.waitForBoot({
 
 The arguments to the initializer are prefix and grid rotation.
 
-The library communicates with *serialosc* to discover attached devices using OSC. For a detailed description of how the mechanism and protocol work, see [monome.org/docs/tech:osc](http://monome.org/docs/tech:osc).
+The library communicates with *serialosc* to discover attached devices using OSC. For a detailed description of how the mechanism and protocol work, see [monome.org/docs/serialosc/osc](http://monome.org/docs/serialosc/osc).
 
 ## 2. Basics
 
@@ -396,6 +396,6 @@ Done!
 
 *monom* was written by and is maintained by [Ezra Buchla](http://catfact.net).
 
-This tutorial was created by [Brian Crabtree](http://nnnnnnnn.org) for [monome.org](monome.org). Huge thanks to Raja Das for his very extensive [Monoming with SuperCollider Tutorial](http://monome.org/docs/dev:supercollider_tutorial).
+This tutorial was created by [Brian Crabtree](http://nnnnnnnn.org) for [monome.org](monome.org).
 
 Contributions welcome. Submit a pull request to [github.com/monome/docs](https://github.com/monome/docs) or e-mail [info@monome.org](mailto:info@monome.org).
