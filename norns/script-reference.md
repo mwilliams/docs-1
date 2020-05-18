@@ -224,8 +224,27 @@ h = hid.connect()
 
 ### osc
 
-- `osc.send(to, path, args)`, sends osc event.
+to send from norns to another device:
+
+- `osc.send(to, path, args)`, sends osc event. `to` is a table with IP/port pair, ie `{"192.168.0.11",30001}`
+
+norns receives OSC on port 10111:
+
 - `osc.event(path, args, from)` handler function called when an osc event is received.
+
+params may be controlled remotely if `/params/` is matched on the same port. see param id numbers in the mapping screen of the param menu. for example:
+
+```
+/params/output_level 0.5
+```
+
+key and encoder actions can also be emulated, for example:
+
+```
+/remote/key 1 1
+/remote/enc 2 -1
+```
+
 
 ## crone
 
