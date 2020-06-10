@@ -19,6 +19,18 @@ has_toc: false
 
 ## keys and encoders
 
+key events call the `key(n,z)` function, which you define in a script:
+
+```
+function key(n,z)
+  print("key event: ", n, z)
+end
+```
+
+where `n` is the key number and `z` is the state (`1` = down, `0` = up).
+
+encoder
+
 ## screen
 
 The screen API handles drawing on the norns screen, see the [screen docs](https://monome.org/norns/classes/screen.html) for more details.
