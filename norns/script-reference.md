@@ -19,8 +19,8 @@ has_toc: false
 
 ## keys and encoders
 
-callbacks		|
-:--- | :---
+| callbacks		| |
+| :-- | :-- |
 key(n,z)		| n: key number, z: state (1=down, 0=up)
 enc(n,d)		| n: enc number, d: delta (postive=CW, negative=CCW)
 functions		|
