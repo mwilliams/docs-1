@@ -29,15 +29,27 @@ enc(n,d)		| n: enc number<br/>d: delta (postive=CW, negative=CCW)
 norns.enc.sens(n,s)	| n: enc number<br/>s: sensitivity
 norns.enc.accel(n,a)	| n: enc number<br/>a: acceleration
 
-key events call the `key(n,z)` function, which you define in a script:
+physical key events call the `key(n,z)` function, which you define in a script:
 
 ```
 function key(n,z)
-  print("key event: ", n, z)
+  print("key number " .. n .. " = " .. z)
 end
 ```
 
-where `n` is the key number and `z` is the state (`1` = down, `0` = up).
+encoder movements call `enc(n,d)` similarly. in addition, you can configure each encoders' sensitivity and acceleration independently:
+
+```
+function init()
+  norns.enc.sens(1,8)   -- slow
+  norns.enc.sens(2,1)   -- fast
+  norns.enc.accel(3,4)  -- accelerated
+end
+
+enc = function(n,d)
+  print(n,d)
+end
+```
 
 ## screen
 
