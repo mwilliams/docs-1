@@ -11,7 +11,7 @@ has_toc: false
 # norns script reference
 
 **[core](#core)** &mdash; [keys and encoders](#keys-and-encoders) &mdash; [screen](#screen) &mdash; [softcut](softcut) &mdash; [engine](#engine) &mdash; [clock](#clock) &mdash; [metro](#metro) &mdash; [paramset](#paramset)<br/>
-**[devices](#devices)** &mdash; [midi](#midi) &mdash; [grid](#grid) &mdash; [arc](#arc) &mdash; [hid](#hid) &mdash; [osc](#osc)<br/>
+**[devices](#devices)** &mdash; [midi](#midi) &mdash; [grid](#grid) &mdash; [arc](#arc) &mdash; [hid](#hid) &mdash; [osc](#osc) &mdash; [crow](#crow)<br/>
 **[libraries](#libraries)** &mdash; [util](#util) &mdash; [musicutil](#musicutil) &mdash; [pattern time](#pattern-time) &mdash; [intonation](#intonation)<br/>
 **[meta](#meta)** &mdash; [basic script](#basic-script) &mdash; [directory structure](#directory-structure) &mdash; [crone](#crone) &mdash; [audio params](#audio-params)
 
@@ -239,6 +239,8 @@ key and encoder actions can also be emulated, for example:
 /remote/key 1 1
 /remote/enc 2 -1
 ```
+
+## crow
 
 
 # libraries
