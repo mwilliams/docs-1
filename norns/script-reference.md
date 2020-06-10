@@ -13,7 +13,7 @@ has_toc: false
 **[core](#core)** &mdash; [keys and encoders](#keys-and-encoders) &mdash; [screen](#screen) &mdash; [softcut](softcut) &mdash; [engine](#engine) &mdash; [clock](#clock) &mdash; [metro](#metro) &mdash; [paramset](#paramset)<br/>
 **[devices](#devices)** &mdash; [midi](#midi) &mdash; [grid](#grid) &mdash; [arc](#arc) &mdash; [hid](#hid) &mdash; [osc](#osc)<br/>
 **[libraries](#libraries)** &mdash; [util](#util) &mdash; [musicutil](#musicutil) &mdash; [pattern time](#pattern-time) &mdash; [intonation](#intonation)<br/>
-**[meta](#meta)** &mdash; [basic script](#basic-script) &mdash; [directory structure](#directory-structure) &mdash; [crone](#crone)
+**[meta](#meta)** &mdash; [basic script](#basic-script) &mdash; [directory structure](#directory-structure) &mdash; [crone](#crone) &mdash; [audio params](#audio-params)
 
 # core
 
@@ -91,6 +91,7 @@ screen.display_png(filename, x, y) | 	display png.
 **notes:**
 - place ALL screen function calls within the `redraw()` function, which is managed by the norns menu. putting screen calls outside of `redraw` may interfere with the menu.
 - optimization tip: there is no need to call `redraw` faster than 15fps as you will not see the update. consider using a `clock` to call `redraw` at a fixed rate of `1/15`.
+- see the [cairo tutorial](https://www.cairographics.org/tutorial/)
 
 ```
 function redraw()
@@ -350,4 +351,9 @@ include("otherscript/lib/otherlib")
 ![](../image/crone-process-routing.png)
 
 [pdf version](../crone-process-routing.pdf)
+
+
+## audio params
+
+(from PLAY)
 
