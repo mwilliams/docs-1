@@ -19,13 +19,15 @@ has_toc: false
 
 ## keys and encoders
 
-| callbacks		| |
+| callbacks | |
 | :-- | :-- |
-key(n,z)		| n: key number, z: state (1=down, 0=up)
-enc(n,d)		| n: enc number, d: delta (postive=CW, negative=CCW)
-functions		|
-norns.enc.sens(n,s)	| n: enc number, s: sensitivity
-norns.enc.accel(n,a)	| n: enc number, a: acceleration
+key(n,z)		| n: key number<br/>z: state (1=down, 0=up)
+enc(n,d)		| n: enc number<br/>d: delta (postive=CW, negative=CCW)
+
+| functions | |
+| :-- | :-- |
+norns.enc.sens(n,s)	| n: enc number<br/>s: sensitivity
+norns.enc.accel(n,a)	| n: enc number<br/>a: acceleration
 
 key events call the `key(n,z)` function, which you define in a script:
 
