@@ -19,6 +19,8 @@ has_toc: false
 
 ## keys and encoders
 
+basic interface control for the standard norns key and encoder hardware
+
 | callbacks | |
 | :-- | :-- |
 key(n,z)		| n: key number<br/>z: state (1=down, 0=up)
@@ -53,7 +55,42 @@ end
 
 ## screen
 
-The screen API handles drawing on the norns screen, see the [screen docs](https://monome.org/norns/classes/screen.html) for more details.
+interface for the norns screen hardware, which is 128 x 64 pixels with 16 levels of brightness per pixel. currently the screen redraws at 15fps.
+
+| functions ||
+| :-- | :-- |
+screen.aa(state) |	enable/disable anti-aliasing.
+screen.clear() 	| clear.
+screen.level(value) | 	set level(color/brightness).
+screen.line_width(w) | 	set line width.
+screen.line_cap(style) | 	set line cap style.
+screen.line_join(style) | 	set line join style.
+screen.miter_limit(limit) | 	set miter limit.
+screen.move(x, y) | 	move drawing position.
+screen.move_rel(x, y) | 	move drawing position relative to current position.
+screen.line(x, y) | 	draw line to specified point.
+screen.line_rel(x, y) | 	draw line to specified point relative to current position.
+screen.arc(x, y, r, angle1, angle2) | 	draw arc.
+screen.circle(x, y, r) | 	draw circle.
+screen.rect(x, y, w, h) | 	draw rectangle.
+screen.curve(x1, y1, x2, y2, x3, y3) | 	draw curve (cubic Bézier spline).
+screen.curve_rel(x1, y1, x2, y2, x3, y3) | 	draw curve (cubic Bézier spline) relative coordinates.
+screen.close() | 	close current path.
+screen.stroke() | 	stroke current path.
+screen.fill() | fill current path.
+screen.text(str) | 	draw text(left aligned).
+screen.text_right(str) | 	draw text, right aligned.
+screen.text_center(str) | 	draw text, center aligned.
+screen.text_extents(str) | 	calculate width of text.
+screen.font_face(index) | 	select font face.
+screen.font_size(size) | 	set font size.
+screen.pixel(x, y) | 	draw single pixel (requires integer x/y, fill afterwards).
+screen.display_png(filename, x, y) | 	display png.
+
+
+**notes:**
+- place ALL screen function calls within the `redraw()` function, which is managed by the norns menu. putting screen calls outside of `redraw` may interfere with the menu.
+- optimization tip: there is no need to call `redraw` faster than 15fps as you will not see the update. consider using a `clock` to call `redraw` at a fixed rate of `1/15`.
 
 ```
 function redraw()
